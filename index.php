@@ -4,9 +4,9 @@ use Akkuzin\MyLog;
 use Akkuzin\AkkuzinException;
 use Akkuzin\QuEquation;
 
-include "core/EquationInterface.php";
-include "core/LogAbstract.php";
-include "core/LogInterface.php";
+include "core/core/EquationInterface.php";
+include "core/core/LogAbstract.php";
+include "core/core/LogInterface.php";
 include "Akkuzin/MyLog.php";
 include "Akkuzin/Equation.php";
 include "Akkuzin/QuEquation.php";
