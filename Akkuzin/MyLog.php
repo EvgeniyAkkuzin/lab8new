@@ -18,7 +18,10 @@ Class MyLog extends LogAbstract implements LogInterface {
 	}
     
     public function _write(){
-        
+        $dir = __DIR__ . "\..\log"; // Например /var/www/localhost/public
+if(!is_dir($dir)) {
+    mkdir($dir, 0777, true);
+}
        $d = date_create();
         $z = (string)$d->format('d-m-Y\TH.i.s.u');
         foreach($this->log as $value){
