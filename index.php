@@ -1,22 +1,19 @@
-<?php
+﻿<?php
 
-use Akkuzin\MyLog;
-use Akkuzin\AkkuzinException;
-use Akkuzin\QuEquation;
+use akkuzin\MyLog;
+use akkuzin\QuEquation;
 
-include "core/core/EquationInterface.php";
-include "core/core/LogAbstract.php";
-include "core/core/LogInterface.php";
-include "Akkuzin/MyLog.php";
-include "Akkuzin/Equation.php";
-include "Akkuzin/QuEquation.php";
-include "Akkuzin/AkkuzinException.php";
+
+require_once __DIR__ . './vendor/autoload.php';
 
 ini_set("display_errors", 1);
 error_reporting(-1);
 
 try {
-	MyLog::log("Версия программы: " . trim(file_get_contents('version')) );
+	if(!is_dir("log")) {
+        mkdir("log", 0700);
+    }
+    MyLog::log("Версия программы: " . trim(file_get_contents('version')) );
     $b = new QuEquation();
     $values = array();
 
@@ -33,7 +30,7 @@ try {
 
     $str = implode(", ", $x);
     MyLog::log("Корни уравнения: " . $str);
-} catch (AkkuzinException $e) {
+} catch (Exception $e) {
     MyLog::log($e->getMessage());
 }
 

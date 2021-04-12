@@ -1,2 +1,4 @@
-php-7.3.11
-start.bat
+.idea
+vendor
+log
+version

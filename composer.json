@@ -1,0 +1,36 @@
+{
+  "name": "evgeniyakkuzin/lab8new",
+  "description": "project",
+  "type": "project",
+  "license": "-",
+  "authors": [
+    {
+		"name": "evgeniyakkuzin",
+		"email": "evgeniyakkuzin@gmail.com"
+    }
+  ],
+  
+
+  "minimum-stability": "dev",
+
+	"scripts": {
+    "post-install-cmd": [
+        "git symbolic-ref --short -q HEAD>version"
+    ]
+  },
+  
+  "require": {
+    "evgeniyakkuzin/lab10": "1.0"
+  },
+
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/rok9ru/trpo-core"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/EvgeniyAkkuzin/lab10.git"
+    }
+  ]
+}
